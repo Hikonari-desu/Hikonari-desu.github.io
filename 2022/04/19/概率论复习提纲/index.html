@@ -23,30 +23,67 @@
     var CONFIG = {"hostname":"hikonari-desu.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="今日的风甚是喧嚣">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hi&#39;s Blog">
-<meta property="og:url" content="https://hikonari-desu.github.io/index.html">
+  <meta name="description" content="随机事件与概率1.1 概率论引言————概率的意义概率论：研究相继发生或者同时发生的大量随机现象的平均特性概率论的目的：用事件的概率来描述和预测这些平均特性事件A概率：P(A) 1.2 随机事件及其运算确定概率数据P(A)的方法：频率方法，古典方法，几何方法，主观方法 样本点 ω：表示基本结果 样本空间 Ω&#x3D;{ω}：随机现象一切可能基本结果的集合 认识随机现象首先列出他的样本空间：  抛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="概率论复习提纲">
+<meta property="og:url" content="https://hikonari-desu.github.io/2022/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/index.html">
 <meta property="og:site_name" content="Hi&#39;s Blog">
-<meta property="og:description" content="今日的风甚是喧嚣">
+<meta property="og:description" content="随机事件与概率1.1 概率论引言————概率的意义概率论：研究相继发生或者同时发生的大量随机现象的平均特性概率论的目的：用事件的概率来描述和预测这些平均特性事件A概率：P(A) 1.2 随机事件及其运算确定概率数据P(A)的方法：频率方法，古典方法，几何方法，主观方法 样本点 ω：表示基本结果 样本空间 Ω&#x3D;{ω}：随机现象一切可能基本结果的集合 认识随机现象首先列出他的样本空间：  抛">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/P(AB)%E2%89%A0P(A|B).png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%A0%B7%E6%9C%AC%E7%A9%BA%E9%97%B4%E5%88%86%E5%89%B2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E7%A6%BB%E6%95%A3%E6%9C%9F%E6%9C%9B.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E8%BF%9E%E7%BB%AD%E6%9C%9F%E6%9C%9B.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B%E6%80%A7%E8%B4%A8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%96%B9%E5%B7%AE.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%A0%87%E5%87%86%E5%B7%AE.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%96%B9%E5%B7%AE%E6%80%A7%E8%B4%A84.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%E5%BB%B6%E4%BC%B8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E8%BF%9E%E7%BB%AD%E5%9C%BA%E5%90%88%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E8%BF%9E%E7%BB%AD%E5%9C%BA%E5%90%88%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E9%87%8D%E6%9C%9F%E6%9C%9B%E5%85%AC%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E9%87%8D%E6%9C%9F%E6%9C%9B%E5%85%AC%E5%BC%8F%E5%BA%94%E7%94%A8.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E9%9A%8F%E6%9C%BA%E4%B8%AA%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B%E5%92%8C.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%8C%89%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%B8%A4%E6%94%B6%E6%95%9B%E4%B8%8D%E7%AD%89%E4%BB%B7.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E6%A6%82%E8%BF%B0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86-%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E8%BE%9B%E9%92%A6%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E6%A6%82%E8%BF%B0.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%861-1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%861-2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%A3%A3%E8%8E%AB%E5%BC%97%E2%80%94%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%9E%97%E5%BE%B7%E4%BC%AF%E6%A0%BC%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E7%8B%AC%E7%AB%8B%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E7%94%A8%E9%80%94.png">
+<meta property="article:published_time" content="2022-04-19T00:47:57.000Z">
+<meta property="article:modified_time" content="2022-04-19T11:48:59.644Z">
 <meta property="article:author" content="Hikonari">
+<meta property="article:tag" content="课程">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6.png">
 
-<link rel="canonical" href="https://hikonari-desu.github.io/">
+<link rel="canonical" href="https://hikonari-desu.github.io/2022/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>Hi's Blog</title>
+  <title>概率论复习提纲 | Hi's Blog</title>
   
 
 
@@ -189,91 +226,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hikonari-desu.github.io/2022/04/14/GoodNight/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/My_avatar.jpg">
-      <meta itemprop="name" content="Hikonari">
-      <meta itemprop="description" content="今日的风甚是喧嚣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/14/GoodNight/" class="post-title-link" itemprop="url">GoodNight</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <i class="fa fa-thumb-tack"></i>
-            <font color=7D26CD>置顶</font>
-            <span class="post-meta-divider">|</span>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2022-04-14 00:21:43 / 修改时间：00:32:37" itemprop="dateCreated datePublished" datetime="2022-04-14T00:21:43+08:00">2022-04-14</time>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>18</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>#欢迎来到我的小<del>池塘</del>！<br>#那么，晚安~</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E4%BA%8C%E6%AC%A1%E5%85%83%E6%AF%94%E5%BF%83.jpg"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -289,10 +245,9 @@
       <meta itemprop="name" content="Hi's Blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" class="post-title-link" itemprop="url">概率论复习提纲</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          概率论复习提纲
+        </h1>
 
         <div class="post-meta">
 
@@ -307,7 +262,14 @@
               <time title="创建时间：2022-04-19 08:47:57 / 修改时间：19:48:59" itemprop="dateCreated datePublished" datetime="2022-04-19T08:47:57+08:00">2022-04-19</time>
             </span>
 
-          <br>
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -332,7 +294,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h2 id="随机事件与概率"><a href="#随机事件与概率" class="headerlink" title="随机事件与概率"></a>随机事件与概率</h2><h3 id="1-1-概率论引言————概率的意义"><a href="#1-1-概率论引言————概率的意义" class="headerlink" title="1.1 概率论引言————概率的意义"></a>1.1 概率论引言————概率的意义</h3><p>概率论：研究相继发生或者同时发生的大量随机现象的平均特性<br>概率论的目的：用事件的概率来描述和预测这些平均特性<br>事件A概率：P(A)</p>
+        <h2 id="随机事件与概率"><a href="#随机事件与概率" class="headerlink" title="随机事件与概率"></a>随机事件与概率</h2><h3 id="1-1-概率论引言————概率的意义"><a href="#1-1-概率论引言————概率的意义" class="headerlink" title="1.1 概率论引言————概率的意义"></a>1.1 概率论引言————概率的意义</h3><p>概率论：研究相继发生或者同时发生的大量随机现象的平均特性<br>概率论的目的：用事件的概率来描述和预测这些平均特性<br>事件A概率：P(A)</p>
 <h3 id="1-2-随机事件及其运算"><a href="#1-2-随机事件及其运算" class="headerlink" title="1.2 随机事件及其运算"></a>1.2 随机事件及其运算</h3><p>确定概率数据P(A)的方法：频率方法，古典方法，几何方法，主观方法</p>
 <p>样本点 ω：表示基本结果</p>
 <p>样本空间 Ω&#x3D;{ω}：随机现象一切可能基本结果的集合</p>
@@ -461,7 +423,6 @@
 <h5 id="李雅普诺夫中心极限定理"><a href="#李雅普诺夫中心极限定理" class="headerlink" title="李雅普诺夫中心极限定理"></a>李雅普诺夫中心极限定理</h5><p><img src="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86.png"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/%E7%8B%AC%E7%AB%8B%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%E7%94%A8%E9%80%94.png"></p>
 <h2 id="最大似然估计与贝叶斯估计"><a href="#最大似然估计与贝叶斯估计" class="headerlink" title="最大似然估计与贝叶斯估计*"></a>最大似然估计与贝叶斯估计*</h2>
-      
     </div>
 
     
@@ -469,289 +430,98 @@
     
 
     
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+       <div>
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:24px;">-------------本文结束  </i>感谢您的阅读-------------</div>
+    
+</div>
+       </div>
+    
+        <div class="reward-container">
+  <div>投喂汪汪QAQ</div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    投喂
+  </button>
+  <div id="qr" style="display: none;">
       
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hikonari-desu.github.io/2022/04/10/%E6%AF%9B%E6%A6%82-Pre/">
+      <div style="display: inline-block;">
+        <img src="/images/wechatpay.png" alt="Hikonari 微信支付">
+        <p>微信支付</p>
+      </div>
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/My_avatar.jpg">
-      <meta itemprop="name" content="Hikonari">
-      <meta itemprop="description" content="今日的风甚是喧嚣">
-    </span>
+  </div>
+</div>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/10/%E6%AF%9B%E6%A6%82-Pre/" class="post-title-link" itemprop="url">毛概Pre 邓小平理论指导下通信技术领域的发展</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-10 09:44:36" itemprop="dateCreated datePublished" datetime="2022-04-10T09:44:36+08:00">2022-04-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-14 19:28:38" itemprop="dateModified" datetime="2022-04-14T19:28:38+08:00">2022-04-14</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>简要架构脉络与思路</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/10/%E6%AF%9B%E6%A6%82-Pre/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Hikonari
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://hikonari-desu.github.io/2022/04/19/%E6%A6%82%E7%8E%87%E8%AE%BA%E5%A4%8D%E4%B9%A0%E6%8F%90%E7%BA%B2/" title="概率论复习提纲">https://hikonari-desu.github.io/2022/04/19/概率论复习提纲/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
 
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hikonari-desu.github.io/2022/04/06/my-first-blog/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/My_avatar.jpg">
-      <meta itemprop="name" content="Hikonari">
-      <meta itemprop="description" content="今日的风甚是喧嚣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/06/my-first-blog/" class="post-title-link" itemprop="url">我的第一篇博客</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-06 16:22:15" itemprop="dateCreated datePublished" datetime="2022-04-06T16:22:15+08:00">2022-04-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-04-17 19:45:53" itemprop="dateModified" datetime="2022-04-17T19:45:53+08:00">2022-04-17</time>
-              </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>133</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>这是我的第一篇博客</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/04/06/my-first-blog/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
+  <div class="followme">
+    <p>欢迎关注我的其它发布渠道</p>
 
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+    <div class="social-list">
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://hikonari-desu.github.io/2022/04/05/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/Hikonari-desu/My_PicGo/img/My_avatar.jpg">
-      <meta itemprop="name" content="Hikonari">
-      <meta itemprop="description" content="今日的风甚是喧嚣">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hi's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/04/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-04-05 01:29:06" itemprop="dateCreated datePublished" datetime="2022-04-05T01:29:06+08:00">2022-04-05</time>
+        <div class="social-item">
+          <a target="_blank" class="social-link" href="/atom.xml">
+            <span class="icon">
+              <i class="fa fa-rss"></i>
             </span>
 
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>367</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
+            <span class="label">RSS</span>
+          </a>
         </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
     </div>
+  </div>
 
-    
-    
-    
 
-    
       <footer class="post-footer">
-        <div class="post-eof"></div>
+          <div class="post-tags">
+              <a href="/tags/%E8%AF%BE%E7%A8%8B/" rel="tag"># 课程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/04/14/GoodNight/" rel="prev" title="GoodNight">
+      <i class="fa fa-chevron-left"></i> GoodNight
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
       </footer>
+    
   </article>
   
   
-  
-
-
   
 
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81NjA2MS8zMjUyNA=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -798,6 +568,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E4%B8%8E%E6%A6%82%E7%8E%87"><span class="nav-number">1.</span> <span class="nav-text">随机事件与概率</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-1-%E6%A6%82%E7%8E%87%E8%AE%BA%E5%BC%95%E8%A8%80%E2%80%94%E2%80%94%E2%80%94%E2%80%94%E6%A6%82%E7%8E%87%E7%9A%84%E6%84%8F%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 概率论引言————概率的意义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-2-%E9%9A%8F%E6%9C%BA%E4%BA%8B%E4%BB%B6%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 随机事件及其运算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-3-%E6%A6%82%E7%8E%87%E5%AE%9A%E4%B9%89%E5%8F%8A%E6%80%A7%E8%B4%A8"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 概率定义及性质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E6%80%A7%E8%B4%A8%EF%BC%9A"><span class="nav-number">1.3.1.</span> <span class="nav-text">概率性质：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-4-%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 条件概率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#1-5-%E4%BA%8B%E4%BB%B6%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="nav-number">1.5.</span> <span class="nav-text">1.5 事件的独立性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-number">2.</span> <span class="nav-text">随机变量及其分布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 随机变量及其分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 随机变量的数学期望</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E5%B7%AE%E4%B8%8E%E6%A0%87%E5%87%86%E5%B7%AE"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 随机变量的方差与标准差</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-%E5%B8%B8%E7%94%A8%E7%A6%BB%E6%95%A3%E5%88%86%E5%B8%83"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 常用离散分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%EF%BC%9A"><span class="nav-number">2.4.1.</span> <span class="nav-text">1. 二项分布：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%B3%8A%E6%9D%BE%E5%88%86%E5%B8%83%EF%BC%9A"><span class="nav-number">2.4.2.</span> <span class="nav-text">2. 泊松分布：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-%E5%B8%B8%E7%94%A8%E8%BF%9E%E7%BB%AD%E5%88%86%E5%B8%83"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 常用连续分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="nav-number">2.5.1.</span> <span class="nav-text">1. 正态分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83"><span class="nav-number">2.5.2.</span> <span class="nav-text">2. 均匀分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83"><span class="nav-number">2.5.3.</span> <span class="nav-text">3. 指数分布</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 随机变量函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A6%BB%E6%95%A3%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">2.6.1.</span> <span class="nav-text">离散随机变量函数的分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%87%BD%E6%95%B0%E7%9A%84%E5%88%86%E5%B8%83"><span class="nav-number">2.6.2.</span> <span class="nav-text">连续随机变量函数的分布</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95"><span class="nav-number">2.6.2.1.</span> <span class="nav-text">一般方法</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="nav-number">2.6.3.</span> <span class="nav-text">连续随机变量的条件分布</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%9C%BA%E5%90%88%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F"><span class="nav-number">2.6.4.</span> <span class="nav-text">连续场合全概率公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9E%E7%BB%AD%E5%9C%BA%E5%90%88%E8%B4%9D%E5%8F%B6%E6%96%AF%E5%85%AC%E5%BC%8F"><span class="nav-number">2.6.5.</span> <span class="nav-text">连续场合贝叶斯公式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E6%95%B0%E5%AD%A6%E6%9C%9F%E6%9C%9B"><span class="nav-number">2.6.6.</span> <span class="nav-text">条件数学期望</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E5%92%8C%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">大数定理和中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1-%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%BA%8F%E5%88%97%E7%9A%84%E4%B8%A4%E7%A7%8D%E6%94%B6%E6%95%9B%E6%80%A7"><span class="nav-number">3.1.</span> <span class="nav-text">4.1 随机变量序列的两种收敛性</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E6%A6%82%E7%8E%87%E6%94%B6%E6%95%9B%EF%BC%88%E5%BC%BA%E6%94%B6%E6%95%9B%EF%BC%89"><span class="nav-number">3.1.1.</span> <span class="nav-text">依概率收敛（强收敛）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%88%86%E5%B8%83%E6%94%B6%E6%95%9B%EF%BC%88%E5%BC%B1%E6%94%B6%E6%95%9B%EF%BC%89"><span class="nav-number">3.1.2.</span> <span class="nav-text">按分布收敛（弱收敛）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%8B%EF%BC%9A%E4%B8%A4%E7%A7%8D%E6%94%B6%E6%95%9B%E4%B8%8D%E7%AD%89%E4%BB%B7"><span class="nav-number">3.1.3.</span> <span class="nav-text">例：两种收敛不等价</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2-%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86"><span class="nav-number">3.2.</span> <span class="nav-text">4.2 大数定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%E6%A6%82%E8%BF%B0"><span class="nav-number">3.2.1.</span> <span class="nav-text">大数定理概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%87%E6%AF%94%E9%9B%AA%E5%A4%AB%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="nav-number">3.2.2.</span> <span class="nav-text">切比雪夫不等式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BE%9B%E9%92%A6%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%EF%BC%88%E6%A0%B7%E6%9C%AC%E5%B9%B3%E5%9D%87%E6%95%B0%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%AE%9A%E7%90%86%EF%BC%89"><span class="nav-number">3.2.3.</span> <span class="nav-text">辛钦大数定理（样本平均数稳定性定理）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%AF%E5%8A%AA%E5%88%A9%E5%A4%A7%E6%95%B0%E5%AE%9A%E7%90%86%EF%BC%88%E9%A2%91%E7%8E%87%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%AE%9A%E7%90%86%EF%BC%89"><span class="nav-number">3.2.4.</span> <span class="nav-text">伯努利大数定理（频率稳定性定理）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-3-%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">4.3 中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-number">3.3.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E5%90%8C%E5%88%86%E5%B8%83%E7%9A%84%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.2.</span> <span class="nav-text">独立同分布的中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A3%A3%E8%8E%AB%E5%BC%97%E2%80%94%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%EF%BC%88%E4%BA%8C%E9%A1%B9%E5%88%86%E5%B8%83%E5%BC%B1%E6%94%B6%E6%95%9B%E4%BA%8E%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83%EF%BC%9F%EF%BC%89"><span class="nav-number">3.3.2.1.</span> <span class="nav-text">棣莫弗—拉普拉斯中心极限定理（二项分布弱收敛于正态分布？）</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%8B%AC%E7%AB%8B%E4%B8%8D%E5%90%8C%E5%88%86%E5%B8%83%E7%9A%84%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.3.</span> <span class="nav-text">独立不同分布的中心极限定理</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9E%97%E5%BE%B7%E4%BC%AF%E6%A0%BC%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86%EF%BC%88%E6%84%9F%E8%A7%89%E4%B8%8D%E5%A4%AA%E5%AE%9E%E7%94%A8%E7%9A%84%E4%B8%80%E4%B8%AA%EF%BC%89"><span class="nav-number">3.3.3.1.</span> <span class="nav-text">林德伯格中心极限定理（感觉不太实用的一个）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%9D%8E%E9%9B%85%E6%99%AE%E8%AF%BA%E5%A4%AB%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="nav-number">3.3.3.2.</span> <span class="nav-text">李雅普诺夫中心极限定理</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E4%B8%8E%E8%B4%9D%E5%8F%B6%E6%96%AF%E4%BC%B0%E8%AE%A1"><span class="nav-number">4.</span> <span class="nav-text">最大似然估计与贝叶斯估计*</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -998,6 +769,21 @@ $(document).ready(function() {
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+</script>
 
 </body>
 </html>
