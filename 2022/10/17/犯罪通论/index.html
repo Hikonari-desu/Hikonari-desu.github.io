@@ -696,10 +696,7 @@
     <a href="/2022/04/21/GG/" rel="prev" title="各位别看了，我寄了">
       <i class="fa fa-chevron-left"></i> 各位别看了，我寄了
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2022/10/17/%E6%97%A5%E5%BF%97%EF%BC%9A%E5%8E%BB%E9%99%A4LiveRe%E8%87%AA%E5%B8%A6%E5%B9%BF%E5%91%8A/" rel="next" title="">
-       <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -779,7 +776,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1033,5 +1030,19 @@ NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
 });
 </script>
 
+script.
+  var intervalFunctionID = setInterval(function(){ myTimer() }, 1000);
+  function myTimer() {
+      if (document.getElementById("taboola-livere") != null)
+      {
+        if (document.getElementById("taboola-livere").style.display == "none")
+        {
+          //alert("Interval function stopped");
+          clearInterval(intervalFunctionID);
+        }
+      }
+      document.getElementById("taboola-livere").style.display="none";
+      //alert("Interval function running");
+  }
 </body>
 </html>

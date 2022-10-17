@@ -301,7 +301,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -487,5 +487,19 @@ $(document).ready(function() {
   
 
 
+script.
+  var intervalFunctionID = setInterval(function(){ myTimer() }, 1000);
+  function myTimer() {
+      if (document.getElementById("taboola-livere") != null)
+      {
+        if (document.getElementById("taboola-livere").style.display == "none")
+        {
+          //alert("Interval function stopped");
+          clearInterval(intervalFunctionID);
+        }
+      }
+      document.getElementById("taboola-livere").style.display="none";
+      //alert("Interval function running");
+  }
 </body>
 </html>
