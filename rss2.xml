@@ -9,8 +9,36 @@
     <atom:link href="https://hikonari-desu.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>今天也是寄寄子呢^^</description>
-    <pubDate>Mon, 17 Oct 2022 13:56:13 GMT</pubDate>
+    <pubDate>Mon, 17 Oct 2022 14:13:25 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>20221017日志</title>
+      <link>https://hikonari-desu.github.io/2022/10/17/20221017%E6%97%A5%E5%BF%97/</link>
+      <guid>https://hikonari-desu.github.io/2022/10/17/20221017%E6%97%A5%E5%BF%97/</guid>
+      <pubDate>Mon, 17 Oct 2022 14:04:43 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;更新：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;已去除LiveRe自带广告（教程：&lt;a href=&quot;https://blog.zoutl.cn/515.html%EF%BC%89&quot;&gt;https://blog.zoutl.cn/515.html）&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;发现的</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>更新：</p><ul><li>已去除LiveRe自带广告（教程：<a href="https://blog.zoutl.cn/515.html%EF%BC%89">https://blog.zoutl.cn/515.html）</a></li></ul><p>发现的问题：</p><ul><li>网站字体不支持高亮显示（&#x3D;&#x3D;文字&#x3D;&#x3D;）</li><li>文章尺寸占空比需要提高</li></ul>]]></content:encoded>
+      
+      
+      
+      <category domain="https://hikonari-desu.github.io/tags/%E6%97%A5%E5%BF%97/">日志</category>
+      
+      
+      <comments>https://hikonari-desu.github.io/2022/10/17/20221017%E6%97%A5%E5%BF%97/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>犯罪通论提纲</title>
